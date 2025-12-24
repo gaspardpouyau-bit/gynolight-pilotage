@@ -54,7 +54,7 @@ const TreatmentControl: React.FC = () => {
       <div className="flex-1 flex flex-col items-center px-4 sm:px-8 pt-6 sm:pt-12">
         {/* Progress Circle */}
         <div className="relative w-56 sm:w-64 h-56 sm:h-64 flex items-center justify-center">
-          <svg className="w-full h-full transform -rotate-90">
+          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 256 256">
             <circle
               cx="128"
               cy="128"
