@@ -1,0 +1,7 @@
+{
+  "name": "GYNOlight Pilotage",
+  "description": "Application médicale connectée pour le pilotage de dispositif de luminothérapie vulvo-vaginale et le suivi de santé intime.",
+  "requestFramePermissions": [
+    "bluetooth"
+  ]
+}
