@@ -13,7 +13,7 @@ const AppContent: React.FC = () => {
   const [activeTreatment, setActiveTreatment] = useState<TreatmentType | null>(null);
 
   return (
-    <div className="max-w-md mx-auto h-screen bg-pink-50 overflow-hidden flex flex-col relative shadow-2xl">
+    <div className="w-full md:max-w-md mx-auto h-screen bg-pink-50 overflow-hidden flex flex-col relative md:shadow-2xl touch-pan-y">
       <Routes>
         <Route path="/" element={<Dashboard onConnect={() => setIsConnected(true)} onDisconnect={() => setIsConnected(false)} isConnected={isConnected} />} />
         <Route path="/treatment/:type" element={<TreatmentControl />} />

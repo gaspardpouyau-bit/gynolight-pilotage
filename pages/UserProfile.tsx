@@ -30,25 +30,25 @@ const UserProfile: React.FC = () => {
     return (
         <div className="flex-1 flex flex-col h-full bg-white overflow-y-auto">
             {/* Header */}
-            <div className="px-6 pt-12 pb-6 flex items-center justify-between">
+            <div className="px-4 sm:px-6 pt-8 sm:pt-12 pb-4 sm:pb-6 flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                    <button onClick={() => navigate('/settings')} className="p-2 hover:bg-pink-50 rounded-full transition-colors">
+                    <button onClick={() => navigate('/settings')} className="p-3 hover:bg-pink-50 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
                         <ArrowLeft className="w-6 h-6 text-gray-700" />
                     </button>
-                    <h1 className="text-xl font-bold text-gray-800">Profil Utilisatrice</h1>
+                    <h1 className="text-lg sm:text-xl font-bold text-gray-800">Profil Utilisatrice</h1>
                 </div>
                 <div className="flex gap-2">
                     {isEditing ? (
                         <>
                             <button
                                 onClick={handleCancel}
-                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                className="p-3 hover:bg-gray-100 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                             >
                                 <X className="w-5 h-5 text-gray-600" />
                             </button>
                             <button
                                 onClick={handleSave}
-                                className="p-2 hover:bg-pink-50 rounded-full transition-colors"
+                                className="p-3 hover:bg-pink-50 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                             >
                                 <Save className="w-5 h-5 text-pink-500" />
                             </button>
@@ -56,7 +56,7 @@ const UserProfile: React.FC = () => {
                     ) : (
                         <button
                             onClick={() => setIsEditing(true)}
-                            className="p-2 hover:bg-pink-50 rounded-full transition-colors"
+                            className="p-3 hover:bg-pink-50 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         >
                             <Edit2 className="w-5 h-5 text-gray-600" />
                         </button>
@@ -64,7 +64,7 @@ const UserProfile: React.FC = () => {
                 </div>
             </div>
 
-            <div className="px-6 space-y-6">
+            <div className="px-4 sm:px-6 space-y-4 sm:space-y-6">
                 {/* Profile Picture */}
                 <div className="flex flex-col items-center py-6">
                     <div className="w-24 h-24 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg">

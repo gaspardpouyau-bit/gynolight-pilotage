@@ -43,17 +43,17 @@ const TreatmentControl: React.FC = () => {
   return (
     <div className="flex-1 flex flex-col h-full bg-white">
       {/* Header */}
-      <div className="px-6 pt-12 pb-6 flex items-center justify-between">
-        <button onClick={() => navigate('/')} className="p-2 hover:bg-pink-50 rounded-full">
+      <div className="px-4 sm:px-6 pt-8 sm:pt-12 pb-4 sm:pb-6 flex items-center justify-between">
+        <button onClick={() => navigate('/')} className="p-3 hover:bg-pink-50 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center">
           <ArrowLeft className="w-6 h-6 text-gray-700" />
         </button>
-        <h1 className="text-xl font-bold text-gray-800">{treatmentNames[type || ''] || 'Traitement'}</h1>
-        <div className="w-10" />
+        <h1 className="text-lg sm:text-xl font-bold text-gray-800">{treatmentNames[type || ''] || 'Traitement'}</h1>
+        <div className="w-[44px]" />
       </div>
 
-      <div className="flex-1 flex flex-col items-center px-8 pt-12">
+      <div className="flex-1 flex flex-col items-center px-4 sm:px-8 pt-6 sm:pt-12">
         {/* Progress Circle */}
-        <div className="relative w-64 h-64 flex items-center justify-center">
+        <div className="relative w-56 sm:w-64 h-56 sm:h-64 flex items-center justify-center">
           <svg className="w-full h-full transform -rotate-90">
             <circle
               cx="128"
@@ -84,7 +84,7 @@ const TreatmentControl: React.FC = () => {
         </div>
 
         {/* Intensity Control */}
-        <div className="w-full mt-16 space-y-4">
+        <div className="w-full mt-8 sm:mt-16 space-y-4 px-2">
           <div className="flex justify-between items-center px-2">
             <span className="text-sm font-semibold text-gray-500">Intensité</span>
             <span className="text-sm font-bold text-pink-600">Niveau {intensity}</span>
@@ -96,7 +96,8 @@ const TreatmentControl: React.FC = () => {
             step="1"
             value={intensity}
             onChange={(e) => setIntensity(parseInt(e.target.value))}
-            className="w-full h-2 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-pink-500"
+            className="w-full h-3 sm:h-2 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-pink-500"
+            style={{ touchAction: 'none' }}
           />
           <div className="flex justify-between px-1 text-[10px] text-gray-400 font-bold">
             <span>DOUX</span>
@@ -106,25 +107,24 @@ const TreatmentControl: React.FC = () => {
         </div>
 
         {/* Controls */}
-        <div className="mt-16 flex items-center gap-8">
+        <div className="mt-8 sm:mt-16 flex items-center gap-4 sm:gap-8">
           <button
             onClick={() => setTimeLeft(600)}
-            className="p-4 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+            className="p-4 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors min-w-[56px] min-h-[56px] flex items-center justify-center"
           >
             <RotateCcw className="w-6 h-6" />
           </button>
-          
+
           <button
             onClick={() => setIsActive(!isActive)}
-            className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-95 ${
-              isActive ? 'bg-gray-800 text-white' : 'bg-pink-500 text-white shadow-pink-200'
-            }`}
+            className={`w-24 h-24 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-95 ${isActive ? 'bg-gray-800 text-white' : 'bg-pink-500 text-white shadow-pink-200'
+              }`}
           >
             {isActive ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 ml-1 fill-current" />}
           </button>
 
           <button
-            className="p-4 rounded-full bg-pink-50 text-pink-500 hover:bg-pink-100 transition-colors"
+            className="p-4 rounded-full bg-pink-50 text-pink-500 hover:bg-pink-100 transition-colors min-w-[56px] min-h-[56px] flex items-center justify-center"
           >
             <Activity className="w-6 h-6" />
           </button>

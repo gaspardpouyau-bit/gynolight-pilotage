@@ -20,16 +20,16 @@ const Statistics: React.FC = () => {
   return (
     <div className="flex-1 flex flex-col h-full bg-white overflow-y-auto">
       {/* Header */}
-      <div className="px-6 pt-12 pb-6 flex items-center gap-4">
-        <button onClick={() => navigate('/')} className="p-2 hover:bg-pink-50 rounded-full transition-colors">
+      <div className="px-4 sm:px-6 pt-8 sm:pt-12 pb-4 sm:pb-6 flex items-center gap-4">
+        <button onClick={() => navigate('/')} className="p-3 hover:bg-pink-50 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
           <ArrowLeft className="w-6 h-6 text-gray-700" />
         </button>
-        <h1 className="text-xl font-bold text-gray-800">Suivi d'utilisation</h1>
+        <h1 className="text-lg sm:text-xl font-bold text-gray-800">Suivi d'utilisation</h1>
       </div>
 
-      <div className="px-6 space-y-6">
+      <div className="px-4 sm:px-6 space-y-4 sm:space-y-6">
         {/* Key Stats */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <div className="bg-pink-50 p-5 rounded-2xl border border-pink-100">
             <Calendar className="w-5 h-5 text-pink-500 mb-2" />
             <span className="text-2xl font-bold text-gray-800">12</span>
@@ -43,34 +43,34 @@ const Statistics: React.FC = () => {
         </div>
 
         {/* Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-64">
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100 h-56 sm:h-64">
           <h3 className="text-sm font-bold text-gray-700 mb-4">Activité de la semaine (min)</h3>
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <defs>
                 <linearGradient id="colorUsage" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#ec4899" stopOpacity={0.1}/>
-                  <stop offset="95%" stopColor="#ec4899" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#ec4899" stopOpacity={0.1} />
+                  <stop offset="95%" stopColor="#ec4899" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
-              <XAxis 
-                dataKey="name" 
-                axisLine={false} 
-                tickLine={false} 
-                tick={{fontSize: 10, fill: '#9ca3af'}}
+              <XAxis
+                dataKey="name"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 10, fill: '#9ca3af' }}
               />
               <YAxis hide />
-              <Tooltip 
+              <Tooltip
                 contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
               />
-              <Area 
-                type="monotone" 
-                dataKey="usage" 
-                stroke="#ec4899" 
+              <Area
+                type="monotone"
+                dataKey="usage"
+                stroke="#ec4899"
                 strokeWidth={3}
-                fillOpacity={1} 
-                fill="url(#colorUsage)" 
+                fillOpacity={1}
+                fill="url(#colorUsage)"
               />
             </AreaChart>
           </ResponsiveContainer>
